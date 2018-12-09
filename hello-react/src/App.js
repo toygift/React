@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css'
 import MyComponent from './MyComponent'
 import Event from './EventPractics'
+import Validate from './ValidationSample'
+import ScrollBox from './ScrollBox'
 class App extends Component {
   render() {
     const text = '나는 천재다 !';
@@ -19,6 +21,12 @@ class App extends Component {
         age={37}
       />
         <Event/>
+        <Validate/>
+        <ScrollBox
+          ref={(ref) => this.scrollBox=ref}/>
+        <button onClick={() => 
+          this.scrollBox.scrollToBottom()
+        }>맨 밑으로</button>
       </div>
       
     );
