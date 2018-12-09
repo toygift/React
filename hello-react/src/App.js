@@ -4,7 +4,21 @@ import MyComponent from './MyComponent'
 import Event from './EventPractics'
 import Validate from './ValidationSample'
 import ScrollBox from './ScrollBox'
+import Iteration from './IterationSample'
+import LifeCycle from './LifeCycleSample'
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
 class App extends Component {
+  state = {
+    color:'#000000'
+  }
+  handleClick = () => {
+    this.setState({
+      color:getRandomColor()
+    });
+  }
   render() {
     const text = '나는 천재다 !';
     const condition = false;
@@ -27,6 +41,9 @@ class App extends Component {
         <button onClick={() => 
           this.scrollBox.scrollToBottom()
         }>맨 밑으로</button>
+        <Iteration/>
+        <button onClick={this.handleClick}>랜덤색상</button>
+        <LifeCycle color={this.state.color}/>
       </div>
       
     );
