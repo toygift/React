@@ -24,7 +24,6 @@ class ScrollBox extends Component {
         ref={(ref) => {this.box=ref}}
       >
         <div style={innerStyle}/>
-        
       </div>
     );
   }

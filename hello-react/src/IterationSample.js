@@ -26,6 +26,7 @@ class IterationSample extends Component {
     names:names.filter((item,i) => i!==index)
     });
   }
+
   render() {
    const nameList = this.state.names.map(
      (name,index) => (<li 
