@@ -56,8 +56,9 @@ const initialState = {
   ]
 };
 
-function counter(state=initialState,action) {
+function counter(state = initialState,action) {
   const { counters } = state;
+
   switch (action.type) {
     case types.CREATE:
       return {
@@ -71,12 +72,12 @@ function counter(state=initialState,action) {
       };
     case types.REMOVE:
       return {
-        counters: counters.slice(0,counters.length - 1)
+        counters: counters.slice(0, counters.length - 1)
       };
     case types.INCREMENT:
       return {
         counters: [
-          ...counters.slice(0,action.index),
+          ...counters.slice(0, action.index),
           {
             ...counters[action.index],
             number:counters[action.index].number + 1
@@ -100,7 +101,7 @@ function counter(state=initialState,action) {
         counters: [
           ...counters.slice(0,action.index),
           {
-            ...counter[action.index],
+            ...counters[action.index],
             color: action.color,
           },
           ...counters.slice(action.index + 1, counters.length)
