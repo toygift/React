@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 // -------------------------------------------
 // 4. 스토어 생성
 // -------------------------------------------
-const store = createStore(reducers);
+const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 // -------------------------------------------
 // 5. 프로바이더로 감싸기
 // -------------------------------------------
